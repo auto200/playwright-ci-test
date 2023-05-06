@@ -35,11 +35,14 @@ export default defineConfig({
     {
       name: "setup",
       testMatch: /test.setup.ts/,
+      use: {
+        ...devices["iPhone X"],
+      },
     },
     {
       dependencies: ["setup"],
       name: "chromium",
-      use: { ...devices["Desktop Chrome"], storageState: "e2e/session.json" },
+      use: { ...devices["iPhone X"], storageState: "e2e/session.json" },
     },
 
     /* Test against mobile viewports. */
