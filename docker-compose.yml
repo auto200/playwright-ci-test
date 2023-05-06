@@ -1,0 +1,17 @@
+version: "3.8"
+
+services:
+  e2e-tests:
+    container_name: e2e-tests
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    volumes:
+      - ./test-results:/app/test-results
+      - ./e2e:/app/e2e
+      - .playwright.config.ts:/app/playwright.config.ts
+    entrypoint: sh
+    command: >-
+      -c "
+      cd /app &&
+      npx playwright@1.33.0 test"
