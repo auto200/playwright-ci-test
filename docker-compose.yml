@@ -9,7 +9,7 @@ services:
     volumes:
       - ./test-results:/app/test-results
       - ./e2e:/app/e2e
-      - .playwright.config.ts:/app/playwright.config.ts
+      - ./playwright.config.ts:/app/playwright.config.ts
     entrypoint: sh
     command: >-
       -c "

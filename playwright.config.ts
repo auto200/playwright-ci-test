@@ -39,7 +39,7 @@ export default defineConfig({
     {
       dependencies: ["setup"],
       name: "chromium",
-      use: { ...devices["Desktop Chrome"] },
+      use: { ...devices["Desktop Chrome"], storageState: "e2e/session.json" },
     },
 
     /* Test against mobile viewports. */
